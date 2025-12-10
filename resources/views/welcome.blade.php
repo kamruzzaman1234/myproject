@@ -21,6 +21,9 @@
                     <a href="/create" class="bg-success text-white py-2 px-5 text-center text-decoration-none fs-3">Add new post</a>
                 </div>
             </div>
+            @if(session('success'))
+                <h2 class="fs-3 text-success fw-bold">{{session('success')}}</h2>
+            @endif
         </div>
     </section>
 
