@@ -16,6 +16,12 @@ class PostController extends Controller
 {
     $post = new Post;
 
+    $validated = $request->validate([
+        'name' => 'required',
+        'description'=> 'required',
+        'image'=>'required'
+    ]);
+
     if ($request->hasFile('image')) {
         $file = $request->file('image');
         $filename = time() . '.' . $file->getClientOriginalExtension();

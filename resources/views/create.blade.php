@@ -33,19 +33,28 @@
         <!-- Name -->
         <div class="col-md-6">
             <label class="form-label">Product Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Enter Product Name">
+            <input type="text" name="name" class="form-control" value="{{old('name')}}" placeholder="Enter Product Name">
+            @error('name')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
         <!-- Description -->
         <div class="col-md-6">
             <label class="form-label">Description</label>
-            <input type="text" name="description" class="form-control" placeholder="Enter Description">
+            <input type="text" name="description" class="form-control" value="{{old('description')}}" placeholder="Enter Description">
+            @error('description')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
         <!-- Image Upload -->
         <div class="col-md-6">
             <label class="form-label">Product Image</label>
-            <input type="file" name="image" class="form-control">
+            <input type="file" name="image" value="{{old('image')}}" class="form-control">
+            @error('image')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
         <!-- Submit Button -->
